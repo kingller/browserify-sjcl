@@ -1,6 +1,15 @@
 {
     "name": "browserify-sjcl",
     "version": "1.0.8",
+    "description": "Browser-side for sjcl which is a Stanford Javascript Crypto Library",
+    "keywords": [
+        "browserify",
+        "crypto",
+        "encryption",
+        "javascript",
+        "js",
+        "sjcl"
+    ],
     "homepage": "https://github.com/kingller/browserify-sjcl",
     "bugs": {
         "url": "https://github.com/kingller/browserify-sjcl/issues"
