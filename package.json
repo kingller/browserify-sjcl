@@ -20,15 +20,13 @@
         "package.json",
         "README.md"
     ],
-    "main": "./dist/sjcl.js",
-    "types": "./dist/sjcl.d.ts",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "scripts": {
-        "build": "webpack --mode=production --progress && tsc --build tsconfig.json && rimraf ./dest",
+        "build": "webpack --mode=production --progress",
         "prepublishOnly": "npm run build"
     },
-    "dependencies": {
-        "@types/sjcl": "^1.0.29"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@babel/cli": "7.7.0",
         "@babel/core": "7.7.2",
@@ -54,12 +52,14 @@
         "@babel/preset-typescript": "7.7.2",
         "@babel/register": "7.7.0",
         "@babel/runtime": "7.7.2",
+        "@types/sjcl": "1.0.29",
         "babel-loader": "8.0.6",
         "babel-plugin-import": "1.13.0",
         "clean-webpack-plugin": "0.1.19",
+        "copy-webpack-plugin": "^4.6.0",
         "node-args": "^2.1.8",
         "rimraf": "^3.0.2",
-        "sjcl": "^1.0.8",
+        "sjcl": "1.0.8",
         "typescript": "^3.9.3",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "webpack": "^4.41.2",

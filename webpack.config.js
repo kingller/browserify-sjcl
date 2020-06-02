@@ -1,5 +1,7 @@
+const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const args = require('node-args');
 const isAnalyzer = args.analyzer;
@@ -10,7 +12,7 @@ const mode = args.mode;
 let config = {
     mode,
     entry: {
-        'sjcl': './lib/sjcl.ts',
+        'index': './lib/index.ts',
     },
     stats: isAnalyzer? 'normal': 'errors-warnings',
     output: {
@@ -40,7 +42,7 @@ let config = {
             },
         ],
     },
-    plugins: [new CleanWebpackPlugin([TARGET])],
+    plugins: [new CleanWebpackPlugin([TARGET]), new CopyWebpackPlugin([path.resolve(__dirname, 'node_modules/@types/sjcl/index.d.ts')])],
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
