@@ -1,10 +1,30 @@
 {
     "name": "browserify-sjcl",
     "version": "0.0.0",
-    "private": true,
     "homepage": "https://github.com/kingller/browserify-sjcl",
+    "bugs": {
+        "url": "https://github.com/kingller/browserify-sjcl/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kingller/browserify-sjcl.git"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Kingller Tang",
+        "url": "https://github.com/kingller"
+    },
+    "files": [
+        "dist/*",
+        "types/*",
+        "package.json",
+        "README.md"
+    ],
+    "main": "./dist/sjcl.js",
+    "types": "./dist/sjcl.d.ts",
     "scripts": {
-        "build": "webpack --mode=production --progress && tsc --build tsconfig.json"
+        "build": "webpack --mode=production --progress && tsc --build tsconfig.json && rimraf ./dest",
+        "prepublishOnly": "npm run build"
     },
     "dependencies": {
         "@types/sjcl": "^1.0.29"
@@ -38,6 +58,7 @@
         "babel-plugin-import": "1.13.0",
         "clean-webpack-plugin": "0.1.19",
         "node-args": "^2.1.8",
+        "rimraf": "^3.0.2",
         "sjcl": "^1.0.8",
         "typescript": "^3.9.3",
         "uglifyjs-webpack-plugin": "^2.2.0",

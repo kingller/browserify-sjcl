@@ -10,7 +10,7 @@ const mode = args.mode;
 let config = {
     mode,
     entry: {
-        'index': './lib/index.ts',
+        'sjcl': './lib/sjcl.ts',
     },
     stats: isAnalyzer? 'normal': 'errors-warnings',
     output: {

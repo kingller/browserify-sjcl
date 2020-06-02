@@ -3,7 +3,7 @@
         "outDir": "./dest/",
         "declaration": true,
         "declarationDir": "./dist/",
-        "sourceMap": true,
+        "sourceMap": false,
         "noImplicitAny": true,
         "strictNullChecks": false,
         "module": "commonjs",
