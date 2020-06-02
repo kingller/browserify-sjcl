@@ -11,4 +11,4 @@ npm install browserify-sjcl
 
 ## Documentation
 
-[Go to the documentation](https://www.npmjs.com/package/sjcl)
+It is the browser-side for sjcl. You can [Go to the sjcl documentation](https://www.npmjs.com/package/sjcl).
