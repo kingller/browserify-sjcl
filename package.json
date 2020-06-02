@@ -1,6 +1,6 @@
 {
     "name": "browserify-sjcl",
-    "version": "0.0.0",
+    "version": "1.0.8",
     "homepage": "https://github.com/kingller/browserify-sjcl",
     "bugs": {
         "url": "https://github.com/kingller/browserify-sjcl/issues"
