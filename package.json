@@ -1,6 +1,6 @@
 {
     "name": "browserify-sjcl",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "Browser-side for sjcl which is a Stanford Javascript Crypto Library",
     "keywords": [
         "browserify",
@@ -69,6 +69,7 @@
         "node-args": "^2.1.8",
         "rimraf": "^3.0.2",
         "sjcl": "1.0.8",
+        "string-replace-loader": "2.3.0",
         "typescript": "^3.9.3",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "webpack": "^4.41.2",

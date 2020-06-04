@@ -40,6 +40,19 @@ let config = {
                 loader: 'babel-loader',
                 exclude: /\/node_modules\//
             },
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'string-replace-loader',
+                        options: {
+                            search: /require\(["']crypto["']\)/gi,
+                            replace: 'null'
+                        }
+                    }
+                ],
+                include: /\/node_modules\/sjcl\//
+            },
         ],
     },
     plugins: [new CleanWebpackPlugin([TARGET]), new CopyWebpackPlugin([path.resolve(__dirname, 'node_modules/@types/sjcl/index.d.ts')])],
@@ -52,7 +65,7 @@ let config = {
             }),
         ]
     },
-    externals: { crypto: 'null'}
+    // externals: { crypto: 'null' }
 };
 
 module.exports = config;
