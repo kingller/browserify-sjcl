@@ -1,5 +1,7 @@
 # browserify-sjcl
-Browser-side for sjcl which is a Stanford Javascript Crypto Library
+Browser-side for sjcl which is a Stanford Javascript Crypto Library.  
+
+It solves the problem that the node crypto module is added to bundle files when package sjcl files.
 
 
 ## Install
