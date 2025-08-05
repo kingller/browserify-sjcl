@@ -12,17 +12,18 @@ const mode = args.mode;
 let config = {
     mode,
     entry: {
-        'index': './lib/index.ts',
+        index: './lib/index.ts',
     },
-    stats: isAnalyzer? 'normal': 'errors-warnings',
+    stats: isAnalyzer ? 'normal' : 'errors-warnings',
     output: {
         path: TARGET,
         filename: '[name].js',
         library: 'sjcl',
         libraryTarget: 'umd',
+        globalObject: 'this',
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     module: {
         rules: [
@@ -33,12 +34,12 @@ let config = {
                     presets: ['@babel/preset-typescript'],
                     plugins: [['@babel/plugin-transform-typescript', { allowNamespaces: true }]],
                 },
-                exclude: /\/node_modules\//
+                exclude: /\/node_modules\//,
             },
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                exclude: /\/node_modules\//
+                exclude: /\/node_modules\//,
             },
             {
                 test: /\.js$/,
@@ -47,23 +48,26 @@ let config = {
                         loader: 'string-replace-loader',
                         options: {
                             search: /require\(["']crypto["']\)/gi,
-                            replace: 'null'
-                        }
-                    }
+                            replace: 'null',
+                        },
+                    },
                 ],
-                include: /\/node_modules\/sjcl\//
+                include: /\/node_modules\/sjcl\//,
             },
         ],
     },
-    plugins: [new CleanWebpackPlugin([TARGET]), new CopyWebpackPlugin([path.resolve(__dirname, 'node_modules/@types/sjcl/index.d.ts')])],
+    plugins: [
+        new CleanWebpackPlugin([TARGET]),
+        new CopyWebpackPlugin([path.resolve(__dirname, 'node_modules/@types/sjcl/index.d.ts')]),
+    ],
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: false
+                sourceMap: false,
             }),
-        ]
+        ],
     },
     // externals: { crypto: 'null' }
 };
